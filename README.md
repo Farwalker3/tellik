@@ -1,2 +1,2 @@
-# tellik
+# Tellik
 We Tell Stories
