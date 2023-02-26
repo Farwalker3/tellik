@@ -1,0 +1,131 @@
+#background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#popup {
+	position: absolute;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	height: 80%;
+	background-color: #073642;
+}
+
+#idlecoon {
+	position: absolute;
+	top: calc(100% - 250px);
+	left: 0;
+	width: 175px;
+	height: 250px;
+}
+
+.box1 {
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	border: 4px solid #cb4b16;
+	line-height: 25px;
+	text-align: center;
+	font-weight: 900;
+	color: #cb4b16;
+	font-family: arial;
+	position: absolute;
+	height: calc(80% - 250px);
+	vertical-align: middle;
+}
+
+.sb7:before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid #cb4b16;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #cb4b16;
+	border-bottom: 10px solid transparent;
+	left: 20px;
+	bottom: -23px;
+}
+
+.sb7:after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	left: 24px;
+	bottom: -13px;
+}
+
+#speech {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	overflow: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.speech::-webkit-scrollbar {
+	display: none;
+	width: 0;
+}
+
+#upload {
+	position: absolute;
+	top: calc(100% - 200px);
+	left: 200px;
+	width: calc(100% - 250px);
+	height: 25px;
+	border: none;
+	font-size: 20px;
+	color: #cb4b16;
+	background-color: transparent;
+}
+
+#upload:hover {
+	cursor: pointer;
+}
+
+#newsletter {
+	position: absolute;
+	top: calc(100% - 150px);
+	left: 200px;
+	width: calc(100% - 250px);
+	height: 25px;
+	border: none;
+	font-size: 20px;
+	color: #cb4b16;
+	background-color: transparent;
+}
+
+#newsletter:hover {
+	cursor: pointer;
+}
+
+#learn {
+	position: absolute;
+	top: calc(100% - 100px);
+	left: 200px;
+	width: calc(100% - 250px);
+	height: 25px;
+	border: none;
+	font-size: 20px;
+	color: #cb4b16;
+	background-color: transparent;
+}
+
+#learn:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,104 @@
+* {
+	cursor: not-allowed;
+}
+.rContainer {
+	position: absolute;
+	border-radius: 10px;
+	border: none;
+}
+#RadioContainer {
+	top: 0;
+	left: 0;
+	border-radius: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+#canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+#body {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	width: 100%;
+	height: calc(100% - 200px);
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#footer {
+	position: absolute;
+	top: calc(100% - 100px);
+	left: 0;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+#title {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	width: 200px;
+	height: 80px;
+	overflow: hidden;
+	font-size: 60px;
+	line-height: 80px;
+	color: #FFFFFF;
+}
+#idlecoon {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	width: 60px;
+	height: 90px;
+	opacity: 50%;
+}
+#evilmusic {
+	position: absolute;
+	top: 20px;
+	left: calc(60vw - 40px);
+	width: 40vw;
+	height: 20vw;
+	opacity: 75%;
+}
+#story {
+	position: absolute;
+	top: 20px;
+	left: 40px;
+	width: calc(60vw - 100px);
+	height: calc(100% - 40px);
+	overflow: scroll;
+	font-size: 20px;
+	line-height: 25px;
+	color: #FFFFFF;
+}
