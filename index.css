@@ -12,7 +12,7 @@ body{
 	height: 50%;
 	width: 100%;
 	text-align: center;
-	line-height: 25vh;
+	line-height: calc(42vh - 32px);
 	overflow: hidden;
 	font-size: 32px;
 	font-family: "Montserrat";
@@ -27,9 +27,41 @@ body{
 	height: 50%;
 	width: 100%;
 	text-align: center;
-	line-height: 25vh;
+	line-height: calc(42vh - 32px);
 	overflow: hidden;
 	font-size: 32px;
 	font-family: "Montserrat";
 	color: #CFB53B;
+}
+
+ul {
+	position: absolute;
+	top: calc(51% - 45px);
+	left: 0;
+	width: 95%;
+	height: 40px;
+	display: flex;
+	font-family: sans-serif;
+	background: transparent;
+	color: #00A7C9;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+li {
+	list-style: none;
+	font-weight: bold;
+	font-size: 32px;
+	letter-spacing: 25px;
+	filter: blur(1px);
+	transition: all 2s;
+	text-shadow: 2px 2px 5px red;
+	
+}
+
+li:hover, li:hover ~ li {
+	transform: rotate(20deg) translatey(-20px);
+	opacity: 0;
+	filter: blur(20px);
 }
