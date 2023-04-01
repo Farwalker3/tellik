@@ -4,7 +4,7 @@ body{
 	overflow: hidden;
 }
 
-.container {
+.container1 {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12,13 +12,24 @@ body{
 	height: 50%;
 	width: 100%;
 	text-align: center;
-	line-height: 250px;
-	overflow: none;
+	line-height: 25vh;
+	overflow: hidden;
 	font-size: 32px;
 	font-family: "Montserrat";
 	color: #CFB53B;
-	
 }
-.container p {
-/* 	color: white;  */
+
+.container2 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background: #FFFFFF;
+	height: 50%;
+	width: 100%;
+	text-align: center;
+	line-height: 25vh;
+	overflow: hidden;
+	font-size: 32px;
+	font-family: "Montserrat";
+	color: #CFB53B;
 }
