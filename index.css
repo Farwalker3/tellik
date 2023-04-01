@@ -1,17 +1,23 @@
 body{
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
 .container {
+	position: absolute;
+	top: 0;
+	left: 0;
 	background: black;
-	height: 100vh;
+	height: 50%;
+	width: 100%;
 	text-align: center;
-	padding-top: 25%;
+	line-height: 250px;
 	overflow: none;
 	font-size: 32px;
 	font-family: "Montserrat";
 	color: #CFB53B;
+	
 }
 .container p {
 /* 	color: white;  */
