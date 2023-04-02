@@ -3,10 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="index.css">
-		
 		<title></title>
 	</head>
 	<body>
+		<div class="cursor"></div>
+		<div class="cursor2"></div>
+		<div class="cursor3"></div>
 		<div class="container1">
 			<p> THIS SITE IS UNDER CONSTRUCTION </p>
 		</div>
@@ -30,5 +32,27 @@
 		<div class="container2">
 			<p> PLEASE CHECK BACK SOON </p>
 		</div>
+		<script>
+			const cursor = document.querySelector('.cursor');
+			const cursor2 = document.querySelector('.cursor2');
+			const cursor3 = document.querySelector('.cursor3');
+			
+			const moveCursor = (e)=> {
+				const mouseY = e.clientY - 1;
+				const mouseX = e.clientX - 10;
+				
+				const mouseY2 = e.clientY ;
+				const mouseX2 = e.clientX ;
+				
+				const mouseY3 = e.clientY + 5;
+				const mouseX3 = e.clientX + 5;
+				
+				cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+				cursor2.style.transform = `translate3d(${mouseX2}px, ${mouseY2}px, 0)`;
+				cursor3.style.transform = `translate3d(${mouseX3}px, ${mouseY3}px, 0)`;
+			}
+			
+			window.addEventListener('mousemove', moveCursor);
+		</script>
 	</body>
 </html>
