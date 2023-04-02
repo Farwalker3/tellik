@@ -5,8 +5,8 @@
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<title></title>
 	</head>
-	<body>
-		<div class="cursor"></div>
+	<body onmouseout="document.querySelector('.cursor').style.opacity = '0';document.querySelector('.cursor2').style.opacity = '0';document.querySelector('.cursor3').style.opacity = '0';">
+		<div class="cursor" onmouseout="this.style.opacity = '0';"></div>
 		<div class="cursor2"></div>
 		<div class="cursor3"></div>
 		<div class="container1">
@@ -38,6 +38,10 @@
 			const cursor3 = document.querySelector('.cursor3');
 			
 			const moveCursor = (e)=> {
+				cursor.style.opacity = '1';
+				cursor2.style.opacity = '1';
+				cursor3.style.opacity = '1';
+				
 				const mouseY = e.clientY - 1;
 				const mouseX = e.clientX - 10;
 				
@@ -46,10 +50,12 @@
 				
 				const mouseY3 = e.clientY + 5;
 				const mouseX3 = e.clientX + 5;
-				
-				cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-				cursor2.style.transform = `translate3d(${mouseX2}px, ${mouseY2}px, 0)`;
+
 				cursor3.style.transform = `translate3d(${mouseX3}px, ${mouseY3}px, 0)`;
+				setTimeout(function(){
+					cursor2.style.transform = `translate3d(${mouseX2}px, ${mouseY2}px, 0)`;
+					cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+				}, 1);
 			}
 			
 			window.addEventListener('mousemove', moveCursor);

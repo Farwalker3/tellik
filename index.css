@@ -79,7 +79,8 @@ li:hover, li:hover ~ li {
 	user-select: none;
 	pointer-events: none;
 	z-index: 10000;
-	transition-delay: 5ms;
+	transition: opacity;
+	opacity: 0;
 }
 
 .cursor2 {
@@ -94,7 +95,8 @@ li:hover, li:hover ~ li {
 	user-select: none;
 	pointer-events: none;
 	z-index: 10001;
-	transition-delay: 5ms;
+	transition: opacity;
+	opacity: 0;
 }
 
 .cursor3 {
@@ -109,4 +111,6 @@ li:hover, li:hover ~ li {
 	user-select: none;
 	pointer-events: none;
 	z-index: 10002;
+	transition: opacity;
+	opacity: 0;
 }
