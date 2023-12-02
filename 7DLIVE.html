@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7D Live Products</title>
+    <style>
+        body {
+            background-color: #073642;
+            color: #cb4b16;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #b58900;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .product {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            border: 2px solid #839496;
+            border-radius: 5px;
+        }
+
+        .purchase-button {
+            display: block;
+            margin-top: 10px;
+            background-color: #268bd2;
+            color: #fdf6e3;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .track-list {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .track {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .play-pause-btn {
+            background-color: #268bd2;
+            color: #fdf6e3;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>7D Live Products</h1>
+
+    <div class="products-container">
+
+        <div class="product">
+            <img src="http://kunaki.com/boxshots/PX00ZJXJSG.jpg" alt="7D Live CD">
+            <p>7D Live CD</p>
+            <p>Price: $3.69 + Shipping</p>
+            <a class="purchase-button" href="http://kunaki.com/Sales.asp?PID=PX00ZJXJSG&PP=1">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="http://kunaki.com/boxshots/PX00Z3EJ2O.jpg" alt="7D Live Vinyl (Disk 1)">
+            <p>7D Live Vinyl (Disk 1)</p>
+            <p>Price: $50 + Shipping</p>
+            <a class="purchase-button" href="http://kunaki.com/Sales.asp?PID=PX00Z3EJ2O&PP=1">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="http://kunaki.com/boxshots/PX00ZHUOKA.jpg" alt="7D Live Vinyl (Disk 2)">
+            <p>7D Live Vinyl (Disk 2)</p>
+            <p>Price: $50 + Shipping</p>
+            <a class="purchase-button" href="http://kunaki.com/Sales.asp?PID=PX00ZHUOKA&PP=1">Buy Now</a>
+        </div>
+
+    </div>
+
+    <div class="track-list">
+        <h2>Track List</h2>
+
+        <div class="track">
+            <span>Track 1: Intro/Outro, 15:27</span>
+            <button class="play-pause-btn" onclick="playPause('audio1')">Play Sample</button>
+        </div>
+
+        <div class="track">
+            <span>Track 2: Last Dance, 7:51</span>
+            <button class="play-pause-btn" onclick="playPause('audio2')">Play Sample</button>
+        </div>
+
+        <div class="track">
+            <span>Track 3: Industrial, 12:05</span>
+            <button class="play-pause-btn" onclick="playPause('audio3')">Play Sample</button>
+        </div>
+
+        <div class="track">
+            <span>Track 4: Merry Christmas, 10:14</span>
+            <button class="play-pause-btn" onclick="playPause('audio4')">Play Sample</button>
+        </div>
+
+        <div class="track">
+            <span>Track 5: Credits, 13:18</span>
+            <button class="play-pause-btn" onclick="playPause('audio5')">Play Sample</button>
+        </div>
+    </div>
+
+    <audio id="audio1" src="7DLIVE/IntroOutro(Preview).mp3"></audio>
+    <audio id="audio2" src="7DLIVE/LastDance(Preview).mp3"></audio>
+    <audio id="audio3" src="7DLIVE/Industrial(Preview).mp3"></audio>
+    <audio id="audio4" src="7DLIVE/MerryChristmas(Preview).mp3"></audio>
+    <audio id="audio5" src="7DLIVE/Credits(Preview).mp3"></audio>
+
+    <script>
+        function playPause(audioId) {
+            var audio = document.getElementById(audioId);
+
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+</html>

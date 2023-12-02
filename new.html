@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<style>
+#mydiv {
+  position: absolute;
+  width: 50%;
+  z-index: 9;
+  background-color: rgba(25, 10, 10, 0.75);
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0px 0px 25px #cb4b16;
+}
+  
+#mydiv2 {
+  position: absolute;
+  width: 50%;
+  z-index: 9;
+  background-color: rgba(25, 10, 10, 0.75);
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0px 0px 25px #cb4b16;
+}
+  
+  #mydiv3 {
+    position: absolute;
+    width: 50%;
+    z-index: 9;
+    background-color: rgba(25, 10, 10, 0.75);
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0px 0px 25px #cb4b16;
+  }
+
+#mydivheader {
+  height: 25px;
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #cb4b16;
+  color: #fff;
+}
+  
+#Tellik {
+  top: 25px;
+  left: 0;
+  width: 100%;
+}
+  
+  #Tellik {
+    top: 25px;
+    left: 0;
+    width: 100%;
+  }
+  
+  #Sit1 {
+    position: absolute;
+    top: -125px;
+    left: -25px;
+    width: 200px;
+  }
+  
+  #Sit2 {
+    position: absolute;
+    top: -125px;
+    left: -25px;
+    width: 200px;
+  }
+  
+  #Lay {
+    position: absolute;
+    top: -10vw;
+    left: 25%;
+    width: 50%;
+  }
+</style>
+<body>
+
+<h1>Draggable DIV Element</h1>
+
+<p>Click and hold the mouse button down while moving the DIV element</p>
+
+<div id="mydiv">
+  <div id="mydivheader">
+    <img id="Sit2" src="sit2.png" alt="Tellik">
+  </div>
+  <img id="Tellik" src="Tellik.png" alt="Tellik">
+</div>
+  
+  <div id="mydiv2">
+    <div id="mydivheader">
+      <img id="Sit1" src="sit1.png" alt="Tellik">
+    </div>
+    <img id="Tellik" src="Tellik.png" alt="Tellik">
+  </div>
+
+  <div id="mydiv3">
+    <div id="mydivheader">
+      <img id="Lay" src="lay.png" alt="Tellik">
+    </div>
+    <img id="Tellik" src="Tellik.png" alt="Tellik">
+  </div>
+
+<script>
+  // Make the DIV element draggable
+  dragElement(document.getElementById("mydiv"));
+  dragElement(document.getElementById("mydiv2"));
+  dragElement(document.getElementById("mydiv3"));
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    
+    if (document.getElementById(elmnt.id + "header")) {
+      // If a header is present, make it draggable by both mouse and touch events
+      var header = document.getElementById(elmnt.id + "header");
+      header.onmousedown = dragMouseDown;
+      header.addEventListener("touchstart", touchStart);
+    } else {
+      // Make the entire DIV draggable for both mouse and touch events
+      elmnt.onmousedown = dragMouseDown;
+      elmnt.addEventListener("touchstart", touchStart);
+    }
+    
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // Get the mouse cursor position at startup
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+    
+    function touchStart(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // Get the touch position at startup
+      var touch = e.touches[0];
+      pos3 = touch.clientX;
+      pos4 = touch.clientY;
+      document.ontouchend = closeDragElement;
+      document.ontouchmove = elementDrag;
+    }
+    
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      if (e.touches) {
+        // If it's a touch event, use the first touch
+        var touch = e.touches[0];
+        pos1 = pos3 - touch.clientX;
+        pos2 = pos4 - touch.clientY;
+        pos3 = touch.clientX;
+        pos4 = touch.clientY;
+      } else {
+        // If it's a mouse event, use the mouse coordinates
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+      }
+      // Set the element's new position
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+    
+    function closeDragElement() {
+      // Stop moving when the mouse button or touch is released
+      document.onmouseup = null;
+      document.onmousemove = null;
+      document.ontouchend = null;
+      document.ontouchmove = null;
+    }
+  }
+</script>
+
+</body>
+</html>

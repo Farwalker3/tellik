@@ -1,0 +1,7 @@
+img{
+  width: 50%;
+  object-fit: cover;
+  display: block;
+  transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  margin-top: -10px;
+}

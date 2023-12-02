@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="logo.css">
+    <title></title>
+  </head>
+  <body onmouseout="document.querySelector('.cursor').style.opacity = '0'; document.querySelector('.cursor2').style.opacity = '0'; document.querySelector('.cursor3').style.opacity = '0';">
+    <div class="cursor" onmouseout="this.style.opacity = '0';"></div>
+    <div class="cursor2"></div>
+    <div class="cursor3"></div>
+    <div class="container">
+      <img id="TellikLogo" src="Tellik.jpeg" alt="Tellik Logo" onclick="handleLogoClick()">
+      <ul>
+        <li>W</li>
+        <li>E</li>
+        <li>_</li>
+        <li>T</li>
+        <li>E</li>
+        <li>L</li>
+        <li>L</li>
+        <li>_</li>
+        <li>S</li>
+        <li>T</li>
+        <li>O</li>
+        <li>R</li>
+        <li>I</li>
+        <li>E</li>
+        <li>S</li>
+      </ul>
+    </div>
+    <script>
+      const cursor = document.querySelector('.cursor');
+      const cursor2 = document.querySelector('.cursor2');
+      const cursor3 = document.querySelector('.cursor3');
+      const tellikLogo = document.getElementById('TellikLogo');
+      let rotationAngle = 0;
+      
+      const moveCursor = (e) => {
+        cursor.style.opacity = '1';
+        cursor2.style.opacity = '1';
+        cursor3.style.opacity = '1';
+        
+        const mouseY = e.clientY - 1;
+        const mouseX = e.clientX - 10;
+        
+        const mouseY2 = e.clientY;
+        const mouseX2 = e.clientX;
+        
+        const mouseY3 = e.clientY + 5;
+        const mouseX3 = e.clientX + 5;
+        
+        cursor3.style.transform = `translate3d(${mouseX3}px, ${mouseY3}px, 0)`;
+        setTimeout(function () {
+          cursor2.style.transform = `translate3d(${mouseX2}px, ${mouseY2}px, 0)`;
+          cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        }, 1);
+      }
+      
+      const handleLogoClick = () => {
+        rotationAngle += 1; // Increase the rotation angle
+        
+        if (rotationAngle >= 12) {
+          // When the rotation angle exceeds 30 degrees, initiate the changes
+          document.querySelector('.container').style.background = "#002b36"; // Change background color
+          document.body.style.background = "#002b36"; // Change background color
+          document.querySelector('ul').style.display = "none"; // Remove letters
+          
+          // Create an image flash with the same image as the logo
+          const imageFlash = document.createElement('img');
+          imageFlash.src = "TellikLogo2.png";
+          imageFlash.alt = "Tellik Logo Flash";
+          imageFlash.style.position = "absolute";
+          imageFlash.style.top = "0";
+          imageFlash.style.left = "0";
+          imageFlash.style.width = "100%";
+          imageFlash.style.height = "100%";
+          imageFlash.style.opacity = "1";
+          
+          document.body.appendChild(imageFlash);
+          
+          // Gradually fade out the image flash
+          setTimeout(() => {
+            imageFlash.style.opacity = "0";
+          }, 3500);
+          
+          // Create and display the new logo
+          const newLogo = document.createElement('img');
+          newLogo.id = "TellikLogo";
+          newLogo.src = "Tellik.png";
+          newLogo.alt = "Tellik Logo (New)";
+          newLogo.style.display = "block";
+          newLogo.style.marginLeft = "auto";
+          newLogo.style.marginRight = "auto";
+          newLogo.style.marginTop = "5%";
+          newLogo.style.width = "50%";
+          newLogo.style.height = "auto";
+          newLogo.style.fontFamily = "sans-serif";
+          newLogo.style.background = "transparent";
+          newLogo.style.color = "#00A7C9";
+          
+          tellikLogo.parentNode.replaceChild(newLogo, tellikLogo);
+          
+          document.body.style.overflow = "scroll"; // Change to allow scrolling
+
+        } else {
+          // Apply the rotation transformation
+          tellikLogo.style.transform = `rotate(${rotationAngle}deg)`;
+          // Add a slight jostling effect
+          setTimeout(() => {
+            tellikLogo.style.transform = `rotate(${rotationAngle - 2}deg)`;
+          }, 100);
+        }
+      }
+      
+      window.addEventListener('mousemove', moveCursor);
+    </script>
+  </body>
+</html>
+
