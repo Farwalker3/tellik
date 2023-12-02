@@ -67,6 +67,7 @@
             background-color: #268bd2;
             color: #fdf6e3;
             padding: 8px;
+            margin-left: 10px; /* Added horizontal spacing */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -107,27 +108,27 @@
 
         <div class="track">
             <span>Track 1: Intro/Outro, 15:27</span>
-            <button class="play-pause-btn" onclick="playPause('audio1')">Play Sample</button>
+            <button class="play-pause-btn" onclick="playPause('audio1', this)">Play Sample</button>
         </div>
 
         <div class="track">
             <span>Track 2: Last Dance, 7:51</span>
-            <button class="play-pause-btn" onclick="playPause('audio2')">Play Sample</button>
+            <button class="play-pause-btn" onclick="playPause('audio2', this)">Play Sample</button>
         </div>
 
         <div class="track">
             <span>Track 3: Industrial, 12:05</span>
-            <button class="play-pause-btn" onclick="playPause('audio3')">Play Sample</button>
+            <button class="play-pause-btn" onclick="playPause('audio3', this)">Play Sample</button>
         </div>
 
         <div class="track">
             <span>Track 4: Merry Christmas, 10:14</span>
-            <button class="play-pause-btn" onclick="playPause('audio4')">Play Sample</button>
+            <button class="play-pause-btn" onclick="playPause('audio4', this)">Play Sample</button>
         </div>
 
         <div class="track">
             <span>Track 5: Credits, 13:18</span>
-            <button class="play-pause-btn" onclick="playPause('audio5')">Play Sample</button>
+            <button class="play-pause-btn" onclick="playPause('audio5', this)">Play Sample</button>
         </div>
     </div>
 
@@ -138,13 +139,17 @@
     <audio id="audio5" src="7DLIVE/Credits(Preview).mp3"></audio>
 
     <script>
-        function playPause(audioId) {
+        function playPause(audioId, button) {
             var audio = document.getElementById(audioId);
 
             if (audio.paused) {
                 audio.play();
+                button.innerHTML = "Pause";
+                button.style.backgroundColor = "#dc322f";
             } else {
                 audio.pause();
+                button.innerHTML = "Play Sample";
+                button.style.backgroundColor = "#268bd2";
             }
         }
     </script>
