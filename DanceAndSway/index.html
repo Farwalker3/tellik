@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance And Sway</title>
+    <link rel="icon" type="image/x-icon" href="7DLIVE.png">
+    <style>
+        body {
+            background-color: #073642;
+            color: #cb4b16;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #b58900;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .product {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            border: 2px solid #839496;
+            border-radius: 5px;
+        }
+
+        .purchase-button {
+            display: block;
+            margin-top: 10px;
+            background-color: #268bd2;
+            color: #fdf6e3;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .track-list {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .track {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .play-pause-btn {
+            background-color: #268bd2;
+            color: #fdf6e3;
+            padding: 8px;
+            margin-right: 25px; /* Added horizontal spacing */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .sheet-music {
+            display: none; /* Hide sheet music link */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Billie Bust Up - Dance And Sway (Fan Album)</h1>
+
+    <div class="products-container">
+
+        <div class="product">
+            <img src="https://kunaki.com/ProductImage.ASP?T=I&ST=FO&PID=PX00753EXV" alt="Billie Bust Up - Dance And Sway CD">
+            <p>Billie Bust Up - Dance And Sway CD</p>
+            <p>Price: $3.69 + Shipping</p>
+            <a class="purchase-button" href="https://kunaki.com/sales.asp?PID=PX00753EXV&pp=1">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="https://kunaki.com/VinylRecords/PX008HWZLL.Front.jpg" alt="Billie Bust Up - Dance And Sway Vinyl">
+            <p>Billie Bust Up - Dance And Sway Vinyl</p>
+            <p>Price: $50 + Shipping</p>
+            <a class="purchase-button" href="https://kunaki.com/VinylRecord.asp?ProductId=PX008HWZLL">Buy Now</a>
+        </div>
+
+    </div>
+
+    <div class="track-list">
+        <h2>Track List</h2>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio1', this)">Play Sample</button>
+            <span>Track 1: Billie Bust Up - Dance And Sway (Fan Song), 2:02</span>
+        </div>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio2', this)">Play Sample</button>
+            <span>Track 2: Billie Bust Up - Dance And Sway, Emvoice Lucy Only (Fan Song), 2:02</span>
+        </div>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio3', this)">Play Sample</button>
+            <span>Track 3: Billie Bust Up - Dance And Sway, Emvoice Lucy Vocals Only (Fan Song), 1:56</span>
+        </div>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio4', this)">Play Sample</button>
+            <span>Track 4: Billie Bust Up - Dance And Sway, Emvoice Thomas Only (Fan Song), 2:02</span>
+        </div>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio5', this)">Play Sample</button>
+            <span>Track 5: Billie Bust Up - Dance And Sway, Emvoice Thomas Vocals Only (Fan Song), 1:56</span>
+        </div>
+
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio6', this)">Play Sample</button>
+            <span>Track 6: Billie Bust Up - Dance And Sway, Duet Vocals Only (Fan Song), 1:56</span>
+        </div>
+        
+        <div class="track">
+            <button class="play-pause-btn" onclick="playPause('audio7', this)">Play Sample</button>
+            <span>Track 7: Billie Bust Up - Dance And Sway, Instrumental/Karaoke (Fan Song), 1:56</span>
+        </div>
+    </div>
+
+    <audio id="audio1" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track1.m4a"></audio>
+    <audio id="audio2" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track2.m4a"></audio>
+    <audio id="audio3" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track3.m4a"></audio>
+    <audio id="audio4" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track4.m4a"></audio>
+    <audio id="audio5" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track5.m4a"></audio>
+    <audio id="audio6" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track6.m4a"></audio>
+    <audio id="audio7" src="https://res.cloudinary.com/kodair/video/upload/v1710803532/Dance%20And%20Sway/Track7.m4a"></audio>
+
+    <script>
+        function playPause(audioId, button) {
+            var audio = document.getElementById(audioId);
+
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = "Pause";
+                button.style.backgroundColor = "#dc322f";
+            } else {
+                audio.pause();
+                button.innerHTML = "Play Sample";
+                button.style.backgroundColor = "#268bd2";
+            }
+        }
+    </script>
+
+</body>
+</html>
