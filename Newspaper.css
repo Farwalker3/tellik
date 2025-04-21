@@ -129,13 +129,6 @@ li {
 	border-bottom: 2px solid;
 }
 
-.calories div {
-	font-size: 1.25em;
-	line-height: 1.5em;
-	border-bottom: 2px solid;
-	padding: 5px 0;
-}
-
 .profile {
 	text-align: center;
 }
@@ -175,15 +168,6 @@ li {
 	.dashboard .activity-feed {
 		grid-column: 3 / 7;
 	}
-	.calories div {
-		width: 33.333%;
-		float: left;
-		display: grid;
-		border-left: 2px solid;
-		padding-left: 10px;
-		margin-left: -2px;
-		border-bottom: none;
-	}
 }
 
 /*Close Button Rules*/
@@ -215,26 +199,3 @@ li {
 	color: white;
 }
 
-@media (min-width: 767px) {
-	.profile + .personal-bests + div,
-	.profile + .exercise-table + div,
-	.schedule-table + div {
-		grid-column: 1 / 7 !important;
-	}
-	.profile + .personal-bests,
-	.profile + .exercise-table {
-		grid-column: 1 / 4;
-	}
-	.profile + div + div + .personal-bests,
-	.profile + .exercise-table + .calories + div {
-		grid-column: 1 / 3;
-	}
-	.profile + div + div + .personal-bests + div,
-	.profile + .exercise-table + .calories + div + div {
-		grid-column: 3 / 5;
-	}
-	.profile + div + div + .personal-bests + div + div,
-	.profile + .exercise-table + .calories + div + div + div {
-		grid-column: 5 / 7;
-	}
-}

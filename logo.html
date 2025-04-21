@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="logo.css">
-    <title></title>
+    <link rel="icon" type="image/svg" href="tellik.svg">
+    <title>Welcome To Tellik</title>
   </head>
   <body onmouseout="document.querySelector('.cursor').style.opacity = '0'; document.querySelector('.cursor2').style.opacity = '0'; document.querySelector('.cursor3').style.opacity = '0';">
     <div class="cursor" onmouseout="this.style.opacity = '0';"></div>
@@ -61,7 +62,7 @@
         rotationAngle += 1; // Increase the rotation angle
         
         if (rotationAngle >= 12) {
-          // When the rotation angle exceeds 30 degrees, initiate the changes
+          // When the rotation angle exceeds 12 degrees, initiate the changes
           document.querySelector('.container').style.background = "#002b36"; // Change background color
           document.body.style.background = "#002b36"; // Change background color
           document.querySelector('ul').style.display = "none"; // Remove letters
@@ -79,12 +80,7 @@
           
           document.body.appendChild(imageFlash);
           
-          // Gradually fade out the image flash
-          setTimeout(() => {
-            imageFlash.style.opacity = "0";
-          }, 3500);
-          
-          // Create and display the new logo
+          // Create the new logo and append it immediately
           const newLogo = document.createElement('img');
           newLogo.id = "TellikLogo";
           newLogo.src = "Tellik.png";
@@ -99,10 +95,48 @@
           newLogo.style.background = "transparent";
           newLogo.style.color = "#00A7C9";
           
-          tellikLogo.parentNode.replaceChild(newLogo, tellikLogo);
+          // Use a timeout to ensure the logo change happens during the flash
+          setTimeout(() => {
+            tellikLogo.parentNode.replaceChild(newLogo, tellikLogo);
+          }, 0); // Replace logo immediately during the flash
           
-          document.body.style.overflow = "scroll"; // Change to allow scrolling
-
+          // Gradually fade out the image flash
+          setTimeout(() => {
+            imageFlash.style.opacity = "0";
+          }, 3500); // Time for flash to fade out
+          
+          // Create rectangle links after the flash image has faded out
+          // Append the links container after the new logo
+          setTimeout(() => {
+            // Create rectangle links
+            const linksContainer = document.createElement('div');
+            linksContainer.className = 'links';
+            linksContainer.style.display = 'flex'; // Keep it flexible for responsive design
+            linksContainer.style.justifyContent = 'center';
+            
+            const links = [
+              { text: 'Alpha Testers', href: 'thiscouldbeyou/index.html' },
+              { text: 'The Tellik Directory', href: 'Newspaper.html' },
+              { text: 'About Us', href: 'visual.html' },
+            ];
+            
+            links.forEach(link => {
+              const anchor = document.createElement('a');
+              anchor.className = 'link';
+              anchor.href = link.href;
+              anchor.textContent = link.text;
+              
+              linksContainer.appendChild(anchor);
+            });
+            
+            // Append the links container after the new logo
+            document.body.appendChild(linksContainer);
+            
+            // Change body style to allow scrolling after the flash has finished
+            document.body.style.overflow = "scroll"; // Change to allow scrolling
+            
+          }, 4000); // Wait for the flash image to finish fading out before showing the links
+          
         } else {
           // Apply the rotation transformation
           tellikLogo.style.transform = `rotate(${rotationAngle}deg)`;

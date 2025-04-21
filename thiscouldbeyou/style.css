@@ -1,0 +1,312 @@
+html {
+  filter: saturate(175%) contrast(95%) brightness(95%);
+  height: 100%;
+  cursor: none;
+}
+
+body {
+  font-family: sans-serif;
+  overflow: auto;
+  height: 100%;
+  overscroll-behavior: none;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+  background: url("TanukiFujiLake.jpg") center/cover no-repeat;
+  background-attachment: fixed; /* Make the background fixed */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #000000;
+  z-index: 2;
+}
+
+#Logo {
+  position: absolute;
+  top: 15%;
+  left: 25px;
+  width: auto;
+  height: 65%;
+  object-fit: contain; 
+  object-position: 50% 50%;
+}
+
+#Footer {
+  position: absolute;
+  top: 2600px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #000000;
+}
+
+#Footer ul {
+  position: absolute;
+  top: calc(51% - 45px);
+  left: 0;
+  width: calc(100% - 55px);
+  height: 40px;
+  display: flex;
+  font-family: sans-serif;
+  background: transparent;
+  color: #00A7C9;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#Footer li {
+  list-style: none;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 25px;
+  filter: blur(1px);
+  transition: all 2s;
+  text-shadow: 2px 2px 5px red;
+}
+
+#Footer li:hover, #Footer li:hover ~ li {
+  transform: rotate(20deg) translatey(-20px);
+  opacity: 0;
+  filter: blur(20px);
+}
+
+#Stories {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 2500px;
+  background-color: #FFFFFF;
+}
+
+#Pointer {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+  object-position: 0px -20px;
+}
+
+#ItBeMe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 260px;
+  object-fit: cover; 
+  object-position: -50px -30px;
+}
+
+#Stories {
+  background-color: transparent;
+  overscroll-behavior-x: auto;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-bar {
+  position: sticky;
+  top: 30px;
+  border-radius: 25px;
+  height: 45px;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow-x: scroll;
+  z-index: 3;
+}
+
+.menu-bar li {
+  list-style: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: none;
+  white-space: nowrap;
+}
+
+.menu-bar li a {
+  color: white; /* Set the text color for links */
+  text-decoration: none; /* Remove underline from links */
+  cursor: none;
+}
+
+.menu-bar li::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: .2s;
+  border-radius: 25px;
+}
+
+.menu-bar li:hover {
+  color: black;
+  text-shadow: 3px 3px rgba(155, 155, 155, 0.25);
+}
+
+.menu-bar li:hover::before {
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.grid-container {
+  position: absolute;
+  top: 70px;
+  height: calc(100% - 50px);
+  left: 0;
+  width: calc(100% - 40px);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  color: white;
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.grid-item {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow only at the bottom */
+  margin-bottom: 20px;
+  width: 200px;
+  text-align: center;
+  overflow: hidden; /* Prevents any overflow to respect rounded corners */
+  padding: 0; /* Ensure no padding in the grid item */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Ensures image covers the card properly */
+  border-radius: 10px 10px 0 0; /* Rounded only at the top */
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
+  display: block; /* Ensure the image is treated like a block */
+}
+
+.card-info {
+  font-weight: 100;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 0 0 10px 10px; /* Only round at the bottom */
+  margin: 0; /* Ensure there's no margin */
+}
+
+.card-info h2,
+.card-info p {
+  margin: 0; /* Remove margin on text elements */
+  padding: 0; /* Remove any padding */
+}
+
+.card-info h2 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.card-info p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.cursor {
+  position: fixed;
+  background: #FFFFFF;
+  mix-blend-mode: exclusion;
+  width: 40px;
+  height: 22px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity;
+  opacity: 0;
+}
+
+.cursor2 {
+  position: fixed;
+  background: #FFFFFF;
+  mix-blend-mode: exclusion;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10001;
+  transition: opacity;
+  opacity: 0;
+}
+
+.cursor3 {
+  position: fixed;
+  background: #FFFFFF;
+  mix-blend-mode: exclusion;
+  width: 10px;
+  height: 10px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10002;
+  transition: opacity;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  #Footer ul {
+    position: absolute;
+    top: calc(50% - 37px);
+    left: 190px;
+    width: calc(100% - 230px);
+  }
+  #Footer li {
+    font-size: 2vh;
+  }
+  .menu-bar li {
+    padding: 0 0;
+  }
+}

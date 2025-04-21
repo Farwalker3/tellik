@@ -113,3 +113,33 @@ li:hover, li:hover ~ li {
 	transition: opacity;
 	opacity: 0;
 }
+
+#countdown1 {
+	display: none;
+}
+
+#countdown2 {
+	display: none;
+}
+
+p {
+	display: block;
+}
+
+@media only screen and (max-width: 600px) {
+	#countdown1 {
+		display: block;
+	}
+	
+	#countdown2 {
+		display: block;
+	}
+	
+	p {
+		display: none;
+	}
+	
+	ul {
+		display: none;
+	}
+}

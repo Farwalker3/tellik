@@ -1,0 +1,123 @@
+body {
+  background: url("TanukiFujiLake.jpg") center/cover no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-bar {
+  border-radius: 25px;
+  height: 45px;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
+  margin: 50px 0 0 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow-x: scroll;
+}
+
+.menu-bar li {
+  list-style: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-bar li::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: .2s;
+  border-radius: 25px;
+}
+
+.menu-bar li:hover {
+  color: black;
+}
+
+.menu-bar li:hover::before {
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.grid-container {
+  position: absolute;
+  top: 50px;
+  height: calc(100% - 50px);
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.grid-item {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px; /* Adjust spacing between cards */
+  width: 200px; /* Adjust card width */
+  text-align: center; /* Center the content */
+}
+
+.grid-item:last-child {
+  margin-right: 0;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.card-info h2,
+.card-info p {
+  margin: 5px 0;
+}
+
+.card-info h2 {
+  font-size: 18px;
+}
+
+.card-info p {
+  font-size: 14px;
+}
